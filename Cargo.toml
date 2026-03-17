@@ -16,3 +16,6 @@ tower-cookies = "0.11.0"
 tower-http = { version = "0.5", features = ["cors", "trace"] } # CORS, logging
 subtle = "2.4" # constant time comparison for CSRF
 tower = "0.5.3"
+once_cell = "1.18"
+dotenvy = "0.15.7"
+dirs = "5.0"
