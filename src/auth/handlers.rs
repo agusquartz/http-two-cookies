@@ -30,7 +30,6 @@ pub struct LoginRequest {
 /// 4. Set cookies:
 ///    - `jwt` → HttpOnly, Secure, SameSite=None
 ///    - `csrf` → Secure, SameSite=None (accessible by JS)
-/// 5. Return the CSRF token in JSON response.
 ///
 /// # Example
 /// ```http
@@ -39,8 +38,6 @@ pub struct LoginRequest {
 ///
 /// { "username": "user", "password": "password" }
 ///
-/// Response:
-/// { "csrf": "<csrf-token>" }
 /// ```
 pub async fn login(
     cookies: Cookies,
@@ -97,5 +94,5 @@ pub async fn login(
     // -----------------------------
     // 5. Return CSRF token in JSON
     // -----------------------------
-    Ok(Json(serde_json::json!({"csrf": csrf_token})))
+    Ok(Json(serde_json::json!({})))
 }
